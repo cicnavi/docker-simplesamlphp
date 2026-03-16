@@ -1,4 +1,4 @@
-FROM php:8.3-apache
+FROM php:8.4-apache
 
 # Simplify installing php extensions. See
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
@@ -19,8 +19,8 @@ RUN apt-get update -y && apt-get -y upgrade && apt-get install -y \
 RUN install-php-extensions gmp ldap soap apcu memcached zip pdo_pgsql pdo_mysql intl bcmath @composer-2.9.4
 
 ARG SSP_COMPOSER_VERSION=""
-ARG SSP_VERSION="2.4.5"
-ARG SSP_HASH="1fa1677fa58a2c241100897dac510d887930513186d921fe7df115afc430a7e9"
+ARG SSP_VERSION="2.5.0"
+ARG SSP_HASH="39fbe4ab6305da5dfa7478b3ebea6836505f9312a4ac40b9bd55a857d49d0304"
 
 # Use a real cert instead of snakeoil
 # APACHE_CERT_NAME=ssl-cert-snakeoil
