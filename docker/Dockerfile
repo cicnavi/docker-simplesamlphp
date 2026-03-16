@@ -19,8 +19,8 @@ RUN apt-get update -y && apt-get -y upgrade && apt-get install -y \
 RUN install-php-extensions gmp ldap soap apcu memcached zip pdo_pgsql pdo_mysql intl bcmath @composer-2.9.4
 
 ARG SSP_COMPOSER_VERSION=""
-ARG SSP_VERSION="2.4.4"
-ARG SSP_HASH="7a6811960cfc49e18f8cd7b309b016dbcb8c4ce1559e31482705fd8342b9eb16"
+ARG SSP_VERSION="2.5.0"
+ARG SSP_HASH="39fbe4ab6305da5dfa7478b3ebea6836505f9312a4ac40b9bd55a857d49d0304"
 
 # Use a real cert instead of snakeoil
 # APACHE_CERT_NAME=ssl-cert-snakeoil
