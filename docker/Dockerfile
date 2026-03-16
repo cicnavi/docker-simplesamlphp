@@ -20,7 +20,7 @@ RUN install-php-extensions gmp ldap soap apcu memcached zip pdo_pgsql pdo_mysql 
 
 ARG SSP_COMPOSER_VERSION=""
 ARG SSP_VERSION="2.4.5"
-ARG SSP_HASH="7a6811960cfc49e18f8cd7b309b016dbcb8c4ce1559e31482705fd8342b9eb16"
+ARG SSP_HASH="1fa1677fa58a2c241100897dac510d887930513186d921fe7df115afc430a7e9"
 
 # Use a real cert instead of snakeoil
 # APACHE_CERT_NAME=ssl-cert-snakeoil
