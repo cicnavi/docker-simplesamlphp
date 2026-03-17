@@ -62,7 +62,7 @@ Port information is important in SAML metadata. If the metadata says your servic
 
 You can run SSP
 
-    docker run --name ssp-default -p 443:443 cirrusid/simplesamlphp:v2.4.2
+    docker run --name ssp-default -p 443:443 cirrusid/simplesamlphp:v2.5.0
 
 then navigate to https://localhost/simplesaml/ (and accept the certificate) and you can
 see the welcome page and navigate to some of the menus. Functionality is limited since
@@ -187,7 +187,7 @@ it for you.
 git clone https://github.com/simplesamlphp/simplesamlphp-module-authorize
 cd simplesamlphp-module-authorize/
 # Checkout a tag compatible with the SSP version.
-git checkout v1.6.1
+git checkout v1.8.0
 docker run --name ssp-staging \
   --mount type=bind,source="$(pwd)",target=/var/simplesamlphp/staging-modules/authorize,readonly \
   -e STAGINGCOMPOSERREPOS=authorize \
@@ -206,7 +206,12 @@ In the output, you should see a line like below, indicating the module was insta
 
 We mounted your local module checkout as a read only file system. As you edit files locally  
 the changes will appear in the image. This works great for tweaking code, and css, however other things  
-like routes and controllers are cached by SSP/symfony. TODO: how to make SSP recheck all the routes and controllers?.
+like routes and controllers are cached by SSP/symfony. To clear those caches try the below command.
+
+
+```
+    docker exec -it ssp-staging /var/simplesamlphp/bin/console  ssp-cache:clear --no-warmup
+```
 
 ### Using development branch of SSP
 
